@@ -45,7 +45,7 @@ export function TodaysTasks(){
     <Card>
         <CardHeader>
             <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-semibold">Today's Tasks</CardTitle>
+                <CardTitle className="text-lg font-semibold">Today's Tasks</CardTitle>
                 <button className="flex items-center gap-1 text-blue-600 hover:text-blue-700">
                     <Plus className="w-4 h-4" />
                 </button>
