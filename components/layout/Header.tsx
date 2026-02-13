@@ -23,7 +23,7 @@ export function Header() {
                     {/* Separetor */}
                     <div className="w-px h-6 bg-gray-200"></div>
                     {/* User Profile */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
                             JD
                         </div>
