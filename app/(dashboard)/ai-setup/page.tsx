@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Brain } from 'lucide-react';
+import { Sparkles, Brain } from 'lucide-react';
 import { Subject } from '@/app/types/types';
 import { SubjectCard } from '@/components/ai-setup/SubjectCard';
 import { AddSubjectCard } from '@/components/ai-setup/AddSubjectCard';
@@ -48,7 +48,8 @@ export default function AISetupPage() {
         <div className="bg-white rounded-xl p-6 border border-gray-200">
           <div className="flex items-start gap-4">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
-              <Brain className="w-7 h-7 text-white" />
+              {/* <Sparkles className="w-7 h-7 text-white" /> */}
+              <Brain className="w-7 h-7 text-white"/>
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-1">AI Study Plan Generator</h2>
