@@ -43,7 +43,7 @@ export function UpcomingSessions(){
             <CardHeader className="flex itmes-center justify-between">
                 <CardTitle>Upcoming Study Sessions</CardTitle>
                     <button
-                    className="flex items-center gap-2 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-lg px-3 py-1.5 text-sm hover:opacity-90">
+                    className="flex items-center gap-2 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-lg md:px-3 md:py-1.5 px-2 md:text-sm text-xs hover:opacity-90">
                         <Plus className="w-4 h-4" />
                         <span >Add Session</span>
                     </button>
