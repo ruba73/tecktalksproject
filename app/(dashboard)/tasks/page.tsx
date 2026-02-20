@@ -168,10 +168,9 @@ return (
   <div className="min-h-full bg-gray-50">
     <div className="p-4 sm:p-4 lg:p-4">
       <div className="space-y-6 sm:space-y-6">
-
         {/* HEADER SECTION */}
         <div >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="flex flex-row sm:flex-col sm:items-center sm:justify-between gap-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
             <input
@@ -187,7 +186,7 @@ return (
                 setEditingTask(null);
                 setIsModalOpen(true);
               }}
-              className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg text-sm font-medium"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg text-xs font-medium"
             >
               <Plus className="w-5 h-5" />
               Add Task

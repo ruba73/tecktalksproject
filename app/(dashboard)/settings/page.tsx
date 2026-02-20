@@ -58,7 +58,7 @@ export default function SettingsPage() {
   return (
     <div className="min-h-full bg-gray-50">
       <div className="p-4 sm:p-4 lg:p-4">
-        <div className="mb-6">
+        <div className="mb-6 hidden md:block">
           <div className="flex items-start gap-4">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
               <SettingsIcon className="w-7 h-7 text-white" />

@@ -137,7 +137,7 @@ export default function CoursesPage() {
         {/* Header */}
         <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-gray-600">Manage your courses and learning goals</p>
+            <p className="text-gray-600 hidden md:block">Manage your courses and learning goals</p>
             <button
               onClick={openAddModal}
               className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg text-sm font-medium"
