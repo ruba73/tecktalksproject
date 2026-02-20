@@ -111,9 +111,6 @@ const courseProgress = [
   { name: "Operating Systems", studied: "10h studied", pct: 30, color: "bg-indigo-600" },
 ];
 
-// =====================
-// UI helpers
-// =====================
 function Card({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm">
@@ -244,21 +241,11 @@ function InsightCard({
   );
 }
 
-// =====================
-// PAGE (same wrapper as Courses)
-// =====================
+
 export default function AnalyticsPageView() {
   return (
     <div className="min-h-full bg-gray-50">
-      <div className="p-4 sm:p-6 lg:p-8">
-        {/* Header (same pattern as Courses page) */}
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-            Analytics
-          </h1>
-          <p className="text-gray-600">Track your progress and study habits</p>
-        </div>
-
+      <div className="p-4 sm:p-4 lg:p-4">
         {/* KPI Section (match screenshot layout) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
           {kpis.map((k) => (
@@ -416,7 +403,7 @@ export default function AnalyticsPageView() {
         </Card>
 
         {/* Insights (fix icon + tones) */}
-        <div className="grid grid-cols-3 xl:grid-cols-3 gap-6 mt-8">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
           <InsightCard
             Icon={Sparkles}
             tone="blue"

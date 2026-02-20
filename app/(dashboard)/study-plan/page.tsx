@@ -19,15 +19,8 @@ export default function StudyPlanPage() {
 
   return (
     <div className="min-h-full bg-gray-50">
-      <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto">
-        
-        {/* Page Title */}
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-            Study Plan
-          </h1>
-        </div>
-
+      {/* Responsive Container */}
+      <div className="p-4 sm:p-4 lg:p-4">
         {/* AI Study Plan Generator Card */}
         <div className="bg-white rounded-xl p-6 border border-gray-200 mb-8">
           <div className="flex items-start gap-4">

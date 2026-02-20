@@ -133,13 +133,11 @@ export default function CoursesPage() {
 
   return (
     <div className="min-h-full bg-gray-50">
-      <div className="p-4 sm:p-6 lg:p-8">
+      <div className="p-4 sm:p-4 lg:p-4">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              My Courses
-            </h1>
+            <p className="text-gray-600">Manage your courses and learning goals</p>
             <button
               onClick={openAddModal}
               className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg text-sm font-medium"
@@ -148,7 +146,6 @@ export default function CoursesPage() {
               Add Course
             </button>
           </div>
-          <p className="text-gray-600">Manage your courses and learning goals</p>
         </div>
 
         {/* Courses Grid */}

@@ -37,8 +37,12 @@ export function TaskCard({ task, onToggle, onEdit, onDelete }: TaskCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl p-5 border border-gray-200 hover:shadow-md transition-shadow">
-      <div className="flex items-start gap-4">
+
+  <div className="bg-white rounded-xl p-4 sm:p-5 border border-gray-200 hover:shadow-md transition-shadow">
+    <div className="flex flex-col sm:flex-row gap-4">
+
+      {/* Top Section */}
+      <div className="flex gap-4 flex-1">
         {/* Checkbox */}
         <button
           onClick={onToggle}
@@ -78,7 +82,7 @@ export function TaskCard({ task, onToggle, onEdit, onDelete }: TaskCardProps) {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-1">
+        <div className="flex gap-2 sm:flex-col sm:items-end">
           <button
             onClick={onEdit}
             className="p-2 hover:bg-blue-50 text-blue-600 rounded transition-colors"
@@ -93,6 +97,7 @@ export function TaskCard({ task, onToggle, onEdit, onDelete }: TaskCardProps) {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

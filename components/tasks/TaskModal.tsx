@@ -101,7 +101,7 @@ export function TaskModal({ isOpen, onClose, onSave, task }: TaskModalProps) {
         </div>
 
         {/* Priority and Type */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Priority
@@ -136,7 +136,7 @@ export function TaskModal({ isOpen, onClose, onSave, task }: TaskModalProps) {
         </div>
 
         {/* Date and Time */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Date <span className="text-red-500">*</span>

@@ -42,13 +42,11 @@ export default function AISetupPage() {
 
   return (
     <div className="min-h-full bg-gray-50">
-      <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto space-y-8">
-        
+      <div className="p-4 sm:p-4 lg:p-4 space-y-6">        
         {/* Header */}
-        <div className="bg-white rounded-xl p-6 border border-gray-200">
+        <div >
           <div className="flex items-start gap-4">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
-              {/* <Sparkles className="w-7 h-7 text-white" /> */}
               <Brain className="w-7 h-7 text-white"/>
             </div>
             <div>

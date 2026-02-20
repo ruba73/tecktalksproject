@@ -9,7 +9,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-full bg-gray-50">
       {/* Responsive Container */}
-      <div className="p-4 sm:p-6 lg:p-8">
+      <div className="p-4 sm:p-4 lg:p-4">
         <div className="space-y-6 sm:space-y-8">
           
           {/* Welcome Card */}

@@ -164,118 +164,70 @@ export default function TasksPage() {
     completed: tasks.filter(t => t.completed).length,
   };
 
-  return (
-    <div className="min-h-full bg-gray-50">
-      <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto">
-        
-        {/* Header */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Tasks / To-Do
-            </h1>
+return (
+  <div className="min-h-full bg-gray-50">
+    <div className="p-4 sm:p-4 lg:p-4">
+      <div className="space-y-6 sm:space-y-6">
+
+        {/* HEADER SECTION */}
+        <div >
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search tasks..."
+              className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 b"
+            />
+          </div>
             <button
               onClick={() => {
                 setEditingTask(null);
                 setIsModalOpen(true);
               }}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg text-sm font-medium"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg text-sm font-medium"
             >
               <Plus className="w-5 h-5" />
               Add Task
             </button>
           </div>
 
-          {/* Search Bar - IMPROVED */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search tasks..."
-              className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-              >
-                <span className="text-xl">×</span>
-              </button>
-            )}
-          </div>
-          
-          {/* Search Results Info */}
-          {searchQuery && (
-            <p className="text-sm text-gray-500 mt-2">
-              Found {filteredTasks.length} task{filteredTasks.length !== 1 ? 's' : ''} matching "{searchQuery}"
-            </p>
-          )}
+          {/* Search */}
+
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-          <button
-            onClick={() => setActiveFilter('all')}
-            className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
-              activeFilter === 'all'
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
-            }`}
-          >
-            All Tasks ({counts.all})
-          </button>
-          <button
-            onClick={() => setActiveFilter('today')}
-            className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
-              activeFilter === 'today'
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
-            }`}
-          >
-            Today ({counts.today})
-          </button>
-          <button
-            onClick={() => setActiveFilter('upcoming')}
-            className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
-              activeFilter === 'upcoming'
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
-            }`}
-          >
-            Upcoming ({counts.upcoming})
-          </button>
-          <button
-            onClick={() => setActiveFilter('completed')}
-            className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
-              activeFilter === 'completed'
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
-            }`}
-          >
-            Completed ({counts.completed})
-          </button>
+        {/* FILTER TABS */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          {(['all', 'today', 'upcoming', 'completed'] as const).map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
+                activeFilter === filter
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+              }`}
+            >
+              {filter === 'all' && `All Tasks (${counts.all})`}
+              {filter === 'today' && `Today (${counts.today})`}
+              {filter === 'upcoming' && `Upcoming (${counts.upcoming})`}
+              {filter === 'completed' && `Completed (${counts.completed})`}
+            </button>
+          ))}
         </div>
 
-        {/* Tasks List */}
-        <div className="space-y-3">
+        {/* TASKS GRID (Like Dashboard Sections) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+
           {filteredTasks.length === 0 ? (
-            <div className="bg-white rounded-xl p-12 text-center border border-gray-200">
+            <div className="col-span-full bg-white rounded-xl p-12 text-center border border-gray-200">
               <p className="text-gray-500">
-                {searchQuery 
+                {searchQuery
                   ? `No tasks found matching "${searchQuery}"`
-                  : 'No tasks found'
-                }
+                  : 'No tasks found'}
               </p>
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="mt-4 text-blue-600 hover:text-blue-700 text-sm font-medium"
-                >
-                  Clear search
-                </button>
-              )}
             </div>
           ) : (
             filteredTasks.map((task) => (
@@ -291,18 +243,21 @@ export default function TasksPage() {
               />
             ))
           )}
-        </div>
-      </div>
 
-      <TaskModal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(false);
-          setEditingTask(null);
-        }}
-        onSave={handleSave}
-        task={editingTask}
-      />
+        </div>
+
+      </div>
     </div>
-  );
+
+    <TaskModal
+      isOpen={isModalOpen}
+      onClose={() => {
+        setIsModalOpen(false);
+        setEditingTask(null);
+      }}
+      onSave={handleSave}
+      task={editingTask}
+    />
+  </div>
+);
 }
