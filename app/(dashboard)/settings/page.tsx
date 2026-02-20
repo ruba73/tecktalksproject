@@ -80,21 +80,17 @@ export default function SettingsPage() {
           <div className="space-y-6">
             {/* Daily Study Goal */}
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <label className="text-sm font-medium text-gray-700">Daily Study Goal (hours)</label>
-                <span className="text-sm text-gray-500">{dailyGoal} hours per day</span>
-              </div>
-              <input
-                type="range"
-                min="1"
-                max="12"
-                value={dailyGoal}
-                onChange={(e) => setDailyGoal(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
-                style={{
-                  background: `linear-gradient(to right, #9333ea 0%, #9333ea ${(dailyGoal / 12) * 100}%, #e5e7eb ${(dailyGoal / 12) * 100}%, #e5e7eb 100%)`
-                }}
-              />
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Daily Study Goal (hours)
+                </label>
+                <input
+                    type="number"
+                    min="1"
+                    max="12"
+                    value={dailyGoal}
+                    onChange={(e) => setDailyGoal(parseInt(e.target.value) || 1)}
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
             </div>
 
             {/* Break Duration and Times Grid */}
