@@ -170,7 +170,7 @@ return (
       <div className="space-y-6 sm:space-y-6">
         {/* HEADER SECTION */}
         <div >
-          <div className="flex flex-row sm:flex-col sm:items-center sm:justify-between gap-4">
+          <div className="flex flex-row sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
             <input
