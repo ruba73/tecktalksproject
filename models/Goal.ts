@@ -31,6 +31,7 @@ export interface IPrerequisite {
 export interface IGoal extends Document {
   _id: mongoose.Types.ObjectId;
   userId: mongoose.Types.ObjectId;
+  subjectId?: mongoose.Types.ObjectId;
   type: 'skill-path' | 'academic-course';
   title: string;
   description?: string;
@@ -241,6 +242,12 @@ const GoalSchema = new Schema<IGoal>(
       type: Schema.Types.ObjectId,
       ref: 'StudyGroup',
       default: null,
+    },
+    subjectId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Subject',
+      default: null,
+      index: true,
     },
     isShared: {
       type: Boolean,
